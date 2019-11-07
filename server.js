@@ -192,7 +192,7 @@ app.get('/home/pick_color', function(req, res) {
 
 app.get('/team_stats', function(req, res) {
 	var all_games =  'select * from football_games;';
-  var losses = 'select COUNT(visitor_name) from football_games where home_score < visitor_score'
+  var losses = 'select COUNT(visitor_name) from football_games where home_score < visitor_score';
 	var wins = 'select COUNT(visitor_name) from football_games where home_score > visitor_score';
 	db.task('get-everything', task => {
         return task.batch([
